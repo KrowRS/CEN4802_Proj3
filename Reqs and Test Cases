@@ -1,0 +1,305 @@
+Write at least 10 requirements for a calculator. Make sure you use the word SHALL in each requirement and each requirement shall have an unique identifier such a number. 
+
+Calculator used was Windows 10 Calculator. (Not sure if there's any difference with Windows 11 Calculator but I'm sure it's fine.)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Requirements:
+
+Display Requirements
+1.  The system shall display all numerical inputs on the screen in the order they are entered from left to right.
+2.  The system shall store the current number as a stored number once a calculation input is entered. (Stored numbers appear above current numbers)
+3.  The system shall no longer display the current number once it becomes a stored number and a new numerical input is made.
+
+
+Logic - Calculation Requirements:
+4.  The system shall add the stored number and the current number if there is an “addition” input between them.
+5.  The system shall subtract the current number from the stored number if there is a “subtraction” input between them.
+6.  The system shall multiply the stored number by the current number if there is a “multiplication” input between them.
+7.  The system shall divide the stored number by the current number if there is an “division” input between them.
+8.  The system shall perform the current calculation input upon the stored and current numbers if the “equals” input is made.
+9.  The system shall give an error message if the current number is equal to zero after a division input is made.
+
+
+Reset Requirements
+10.  The system shall clear the current number if the “CE” input is made.
+11.  The system shall clear all memory if the “C” input is made.
+
+Negative-Handling Requirements
+12. The system shall treat a current number as negative if the “negative” input is made, displaying a small negative symbol to the left of the current number.
+13. The system shall treat the current number as positive if the “negative” input is made while the current number was currently being treated as negative.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case - 001
+Test Current Number Display
+Verifying that upon entering numbers those numbers are diplayed horizontally from left-to-right in order of entry.			
+
+Step 1.     Input "1" - Expected Result "1" 
+Step 2.     Input "2" - Expected Result "12" 
+Step 3.     Input "3" - Expected Result "123" 
+
+Actual Output = _____ 
+Pass / Fail =  _____
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case - 002
+Test Conversion of Current Number to Stored Number
+Verify that upon entering a calculation input the current number is saved as a stored number			
+
+Step 1.     Input "123" - Expected Result "123"
+Step 2.	    Input "-" (Negative Symbol) - Expected Result "123" remains as current number, "123" is also stored above with the negative symbol to the right of it.
+
+Actual Output = _____ 
+Pass / Fail =  _____
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case - 003 
+Test display conversion to new value
+Verify that upon entering a new value after inputting a calculation input that the stored value is no longer displayed and the new value is displayed.			
+
+Step. 1	    Input "123" - Expected Result "123" 	
+Step. 2	    Input "+"   - Expected Result "123" remains on the display	
+Step. 3	    Input "9"   - Expected Result "9" 
+
+Actual Output = _____ 
+Pass / Fail =  _____
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case - 004
+Test addition of two values					
+Verify that the stored and current numbers are added when the addition calculation is inputted between them
+
+NOTE: This test is broken up into 4 sections to test functionality for negative and positive values. Please give actual outputs of step 4, 8, 13, and 19.
+
+Step. 1	    Input "100" - Expected Result "100" 	
+Step. 2	    Input "+" - Expected Result "100" remains on the display but is stored	
+Step. 3	    Input "200" - Expected Result "200" 	
+Step. 4     Input equals "=" - Expected Result "300" 	
+
+Step. 5	    Input "100" - Expected Result "100" 	
+Step. 5	    Input negative - Expected Result "-100" 	
+Step. 6	    Input "+" - Expected Result "-100" remains on the display but is stored	
+Step. 7	    Input "200" - Expected Result "200" 	
+Step. 8	    Input equals "=" - Expected Result "100" 	
+
+Step. 9	    Input "200" - Expected Result "200" 	
+Step. 10	  Input negative "-" - Expected Result "-200" 	
+Step. 11	  Input "+" - Expected Result "-200" remains on the display but is stored	
+Step. 12	  Input "100" - Expected Result "100" 	
+Step. 13	  Input equals "=" - Expected Result "-100" 	
+
+Step. 14	  Input "-100" - Expected Result "100" 	
+Step. 15	  Input negative - Expected Result "-100" 	
+Step. 16	  Input "+" - Expected Result "-100" remains on the display but is stored	
+Step. 17	  Input "200" - Expected Result "200" 	
+Step. 18	  Input negative - Expected Result "-200" 	
+Step. 19	  Input equals "=" - Expected Result "-300" 	
+
+Actual Output = _____ 
+Pass / Fail =  _____
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case - 005
+Test subtraction of two values					
+Verify that the current number is subtracted from the stored number when the subtraction calculation is inputted between them			
+
+NOTE: This test is broken up into 4 sections to test functionality for negative and positive values. Please give actual outputs of step 4, 9, 14, and 20.
+
+Step. 1	    Input  "200" - Expected Result "200" 	
+Step. 2	    Input "-" - Expected Result "200" remains on the display but is stored	
+Step. 3	    Input  "100" - Expected Result "100" 	
+Step. 4	    Input equals "=" - Expected Result "100" 	
+
+Step. 5	    Input  "200" - Expected Result "200" 	
+Step. 6	    Input "-" - Expected Result "200" remains on the display but is stored	
+Step. 7	    Input  "100" - Expected Result "100" 	
+Step. 8	    Input negative - Expected Result "-100" 	
+Step. 9	    Input equals "=" - Expected Result "300" 	
+
+Step. 10	  Input  "200" - Expected Result "200" 	
+Step. 11	  Input negative - Expected Result "-200" 	
+Step. 12	  Input "-" - Expected Result "-200" remains on the display but is stored	
+Step. 13	  Input  "100" - Expected Result "100" 	
+Step. 14	  Input equals "=" - Expected Result "-300" 	
+
+Step. 15	  Input  "200" - Expected Result "200" 	
+Step. 16	  Input negative - Expected Result "-200" 	
+Step. 17	  Input "-" - Expected Result "-200" remains on the display but is stored	
+Step. 18	  Input  "100" - Expected Result "100" 	
+Step. 19	  Input negative - Expected Result "-100" 	
+Step. 20	  Input equals "=" - Expected Result "-100" 	
+
+Actual Output = _____ 
+Pass / Fail =  _____
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case - 006
+Test multiplication of two values
+Verify that the stored and current numbers are multiplied when the multiplication calculation is inputted between them
+
+NOTE: This test is broken up into 3 sections to test functionality for negative and positive values. Please give actual outputs of step 4, 9, and 15.
+
+
+Step. 1	    Input  "10" - Expected Result "10" 	
+Step. 2	    Input "*" - Expected Result "10" remains on the display but is stored	
+Step. 3	    Input  "20" - Expected Result "20" 	
+Step. 4	    Input equals "=" - Expected Result "200" 
+
+Step. 5	    Input  "10" - Expected Result "10" 	
+Step. 6	    Input negative - Expected Result "-10" 	
+Step. 7	    Input "*" - Expected Result "-10" remains on the display but is stored	
+Step. 8	    Input  "20" - Expected Result "20" 	
+Step. 9	    Input equals "=" - Expected Result "-200" 
+
+Step. 10	  Input  "10" - Expected Result "10" 	
+Step. 11	  Input negative - Expected Result "-10" 	
+Step. 12	  Input "*" - Expected Result "-10" remains on the display but is stored	
+Step. 13	  Input  "20" - Expected Result "20" 	
+Step. 14	  Input negative - Expected Result "-20" 	
+Step. 15	  Input equals "=" - Expected Result "200" 	
+
+Actual Output = _____ 
+Pass / Fail =  _____
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case - 007
+Test division between two values					
+Verify that the stored number is divided by the current number when the division calculation is inputted between them
+
+NOTE: This test is broken up into 3 sections to test functionality for negative and positive values. Please give actual outputs of step 4, 9, and 15.
+
+Step. 1	    Input "20" - Expected Result "20" 	
+Step. 2	    Input "/" - Expected Result "20" remains on the display but is stored	
+Step. 3	    Input  "10" - Expected Result "10" 	
+Step. 4	    Input equals "=" - Expected Result  "2" 	
+
+Step. 5	    Input "20" - Expected Result "20" 	
+Step. 6	    Input "/" - Expected Result "20" remains on the display but is stored	
+Step. 7	    Input  "10" - Expected Result "10" 	
+Step. 8	    Input negative - Expected Result "-10" 	
+Step. 9	    Input equals "=" - Expected Result "-2" 	
+
+Step. 10	  Input "20" - Expected Result "20" 	
+Step. 11	  Input negative - Expected Result "-20" 	
+Step. 12	  Input "/" - Expected Result "-20" remains on the display but is stored	
+Step. 13	  Input "10" - Expected Result "10" 	
+Step. 14	  Input negative - Expected Result "-10" 	
+Step. 15	  Input equals "=" - Expected Result "2" 	
+
+Actual Output = _____ 
+Pass / Fail =  _____
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case - 008
+Test Clearing of Current Number					
+Verify that the current number value is cleared when the "CE" input is pressed
+
+Note - In this case CE successfully clears the 10 input and allows for the 5 value to be added to the 25 value without any errors.
+
+Step. 1	    Input "25"       - Expected Result "25" 	
+Step. 2	    Input "CE"       - Expected Result "0" 	
+Step. 3	    Input "25"       - Expected Result "25" 	
+Step. 4	    Input negative   - Expected Result "-25" 	
+Step. 5	    Input "CE"       - Expected Result "0" 	
+Step. 6	    Input "25"       - Expected Result "25" 	
+Step. 7	    Input "+"        - Expected Result "25" remains on the display but is stored	
+Step. 8	    Input "10"       - Expected Result "10" 	
+Step. 9	    Input "CE"       - Expected Result "0" 	
+Step. 10	  Input "5"        - Expected Result "5" 	
+Step. 11	  Input equals "=" - Expected Result "30" 	
+
+Actual Output = _____ 
+Pass / Fail =  _____
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case - 009
+Test clearing of all memory					
+Verify that all memory is cleared upon inputting "C", this includes the current calculation, current number and stored number
+
+Note - In this test the steps 7 and 8 indicate that the prior inputs have been wiped.
+
+Step. 1	    Input "25"       - Expected Result "25"	
+Step. 2	    Input "C"        - Expected Result "0"	
+Step. 3	    Input "25"       - Expected Result "25"	
+Step. 4	    Input "+"        - Expected Result "25" remains on the display but is stored	
+Step. 5	    Input "15"       - Expected Result "15"	
+Step. 6	    Input "C"        - Expected Result "0"	
+Step. 7	    Input "5"        - Expected Result "5"	
+Step. 8	    Input equals "=" - Expected Result "5"	
+
+Actual Output = _____ 
+Pass / Fail =  _____
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case - 010
+Test equals input functionality					
+Verify that the equals input performs any prior inputted calculations upon the stored and current numbers in the event those inputs exist.
+			
+Step. 1	    Input "2"        - Expected Result "2"	
+Step. 2	    Input "+"        - Expected Result "2" remains on the display but is stored	
+Step. 3	    Input "3"        - Expected Result "3"	
+Step. 4	    Input equals "=" - Expected Result "5"	
+Step. 5	    Input "2"        - Expected Result "2"	
+Step. 6	    Input "-"        - Expected Result "2" remains on the display but is stored	
+Step. 7	    Input "3"        - Expected Result "3"	
+Step. 8	    Input equals "=" - Expected Result "-1"	
+Step. 9	    Input "2"        - Expected Result "2"	
+Step. 10    Input  "/"       - Expected Result "2" remains on the display but is stored	
+Step. 11    Input "3"        - Expected Result "3"	
+Step. 12	  Input equals "=" - Expected Result "0.6" repeating	
+Step. 13	  Input "2"        - Expected Result "2"	
+Step. 14	  Input "*"        - Expected Result "2" remains on the display but is stored	
+Step. 15	  Input "3"        - Expected Result "3"	
+Step. 16	  Input equals "=" - Expected Result "6"	
+
+Actual Output = _____ 
+Pass / Fail =  _____
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case - 011
+Testing Dividing By Zero					
+Verify that the calculator throws an error when the current number of a division calculation is equal to "0"			
+
+Step. 1	    Input "10"       - Expected Result "10" 	
+Step. 2	    Input "/"        - Expected Result "10" remains on the display but is stored	
+Step. 3	    Input "0"        - Expected Result "0" 	
+Step. 4	    Input equals "=" - Expected Result An error is displayed	
+
+Actual Output = _____ 
+Pass / Fail =  _____
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case - 012
+Testing negative number display					
+Verify that when the negative input is pressed the current number is displayed with a negative symbol to it's left	
+
+Step. 1	    Input "10"       - Expected Result "10" 
+Step. 2	    Input negative   - Expected Result "-10" 	
+
+Actual Output = _____ 
+Pass / Fail =  _____
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case - 013
+Testing negative number display on negative numbers					
+Verify that when the negative number input is pressed while a number is negative that the negative symbol disapears
+
+Step. 1	    Input "10"      - Expected Result "10" 
+Step. 2	    Input negative  - Expected Result "-10" 	
+Step. 3	    Input negative  - Expected Result "10" 
+
+Actual Output = _____ 
+Pass / Fail =  _____
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
